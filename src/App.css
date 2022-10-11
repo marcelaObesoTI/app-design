@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +35,31 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.App button {
+  font: inherit;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border: 1px solid #061f14;
+  background-color: #132515;
+  color: white;
+  border-radius: 12px;
+  margin-right: 1rem;
+}
+.App button:hover,
+.App button:active {
+  background-color: #075a51;
+  border-color: #02231e;
+}
+
+.App button.alternative {
+  color: #013110;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.App button.alternative:hover,
+.App button.alternative:active {
+  background-color: #156225;
 }
