@@ -1,43 +1,31 @@
 module.exports = {
-	root: true,
+	env: {
+		browser: true,
+		es2021: true,
+	},
 	extends: [
-		'plugin:import/errors',
-		'plugin:import/warnings',
 		'plugin:react/recommended',
 		'plugin:react/jsx-runtime',
 		'standard',
 		'eslint-config-prettier',
-		'react-app/jest',
-		'plugin:testing-library/react',
-		'plugin:jest-dom/recommended',
 	],
-
-	rules: {
-		'react/no-danger': 'off',
-		'react/react-in-jsx-scope': 'off',
-		'no-console': 'error',
-		'prettier/prettier': 'off',
+	overrides: [
+		{
+			files: ['*/.spec.js', '*/.spec.jsx', './src/App.test.js'],
+			env: {
+				jest: true,
+			},
+		},
+	],
+	parserOptions: {
+		ecmaVersion: 'latest',
+		sourceType: 'module',
 	},
+	plugins: ['react'],
+	rules: {},
 	settings: {
 		react: {
 			version: 'detect',
 		},
-		'import/resolver': {
-			node: {
-				extensions: ['.js', '.jsx'],
-			},
-			'babel-module': {
-				extensions: ['.js', '.jsx'],
-				alias: {
-					'@/components': './components',
-					'@/styles': './styles',
-				},
-			},
-		},
-	},
-	env: {
-		node: true,
-		browser: true,
-		amd: true,
 	},
 };
