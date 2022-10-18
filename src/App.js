@@ -32,6 +32,10 @@ const App = () => {
 	useEffect(() => {
 		document.body.style.backgroundColor = color;
 	}, [color]);
+	const fetchContent = () => client.getEntries().then(response => response);
+	/**
+	 * Make API request
+	 */
 
 	return (
 		<AppContainer data-testid={'testID-1'}>
