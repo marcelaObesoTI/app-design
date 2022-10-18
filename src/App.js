@@ -9,6 +9,14 @@ const client = contentful.createClient({
 const App = () => {
 	const [content, setContent] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
+
+	useEffect(() => {
+		const delay = setTimeout(() => {
+			console.log('juat making a dramatic pause');
+			fetchData();
+		}, 1000);
+		return () => clearTimeout(delay);
+	}, []);
 	const fetchData = async () => {
 		setIsLoading(true);
 		const result = await fetchContent();
@@ -31,7 +39,7 @@ const App = () => {
 		<div className='App'>
 			{isLoading ? (
 				<header className='App-header'>
-					<button onClick={() => fetchData()}>Ready to fetch content</button>
+					<h3>Dramatically collecting your data</h3>
 				</header>
 			) : (
 				<header className='App-header'>
