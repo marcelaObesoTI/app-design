@@ -9,6 +9,14 @@ const client = contentful.createClient({
 const App = () => {
 	const [content, setContent] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
+
+	useEffect(() => {
+		const delay = setTimeout(() => {
+			console.log('juat making a dramatic pause');
+			fetchData();
+		}, 1000);
+		return () => clearTimeout(delay);
+	}, []);
 	const fetchData = async () => {
 		setIsLoading(true);
 		const result = await fetchContent();
@@ -26,15 +34,12 @@ const App = () => {
 		document.body.style.backgroundColor = color;
 	}, [color]);
 	const fetchContent = () => client.getEntries().then(response => response);
-	/**
-	 * Make API request
-	 */
 
 	return (
 		<div className='App'>
 			{isLoading ? (
 				<header className='App-header'>
-					<button onClick={() => fetchData()}>Ready to fetch content</button>
+					<h3>Dramatically collecting your data</h3>
 				</header>
 			) : (
 				<header className='App-header'>
@@ -51,23 +56,5 @@ const App = () => {
 		</div>
 	);
 };
-
-// function App() {
-
-// 	return (
-// 		<div className='App'>
-// 			<header className='App-header'>
-// 				<h1>Miaw there</h1>
-// 				<button
-// 					onClick={() => {
-// 						setColor(newColor);
-// 					}}
-// 				>
-// 					Change background
-// 				</button>
-// 			</header>
-// 		</div>
-// 	);
-// }
 
 export default App;
