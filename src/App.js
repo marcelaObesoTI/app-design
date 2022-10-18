@@ -26,9 +26,6 @@ const App = () => {
 		document.body.style.backgroundColor = color;
 	}, [color]);
 	const fetchContent = () => client.getEntries().then(response => response);
-	/**
-	 * Make API request
-	 */
 
 	return (
 		<div className='App'>
@@ -51,23 +48,5 @@ const App = () => {
 		</div>
 	);
 };
-
-// function App() {
-
-// 	return (
-// 		<div className='App'>
-// 			<header className='App-header'>
-// 				<h1>Miaw there</h1>
-// 				<button
-// 					onClick={() => {
-// 						setColor(newColor);
-// 					}}
-// 				>
-// 					Change background
-// 				</button>
-// 			</header>
-// 		</div>
-// 	);
-// }
 
 export default App;
