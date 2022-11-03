@@ -12,41 +12,41 @@ describe('rendered components', () => {
 		container = null;
 	});
 
-	test('Has an initial title', () => {
+	it('Has an initial title', () => {
 		const container = screen.getByTestId('testID-1');
 
 		expect(container).toBeInTheDocument();
 	});
 
-	test('should not show button starting', () => {
+	it('should not show button starting', () => {
 		expect(screen.queryByTestId('testID-2')).not.toBeInTheDocument();
 	});
-	test('should not show title starting', () => {
+	it('should not show title starting', () => {
 		expect(screen.queryByTestId('testID-3')).not.toBeInTheDocument();
 	});
-	test('should show title after loading', async () => {
+	it('should show title after loading', async () => {
 		await (async () =>
 			expect(screen.findByTestId('testID-3')).toBeInTheDocument());
 	});
 
-	test('should show button after loading', async () => {
+	it('should show button after loading', async () => {
 		await (async () => {
 			const button = screen.findByTestId('testID-2');
 			expect(button).toBeInTheDocument();
 		});
 	});
 
-	test('should show button after loading', async () => {
+	it('should show button after loading', async () => {
 		await (async () => {
 			const { button } = screen.getByTestId('testID-2');
 			expect(button).toHaveTextContent('Change colors');
 		});
 	});
 	describe('color function behavior', () => {
-		test('starts with #', () => {
+		it('starts with #', () => {
 			expect(colors()).toContain('#');
 		});
-		test('To have a string with length 7', () => {
+		it('To have a string with length 7', () => {
 			expect(colors()).toHaveLength(7);
 		});
 	});
