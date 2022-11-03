@@ -1,4 +1,3 @@
-import { act } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import fetchContent from '../fetchContent';
 

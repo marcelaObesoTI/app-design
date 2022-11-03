@@ -15,14 +15,15 @@
 		"web-vitals": "^2.1.4"
 	},
 	"scripts": {
-		"predeploy": "npm run build",
+		"predeploy": "run build",
 		"deploy": "gh-pages -d build",
 		"start": "react-scripts start",
 		"build": "react-scripts build",
-		"test": "jest --watch",
+		"test": "jest",
 		"eject": "react-scripts eject",
 		"format": "prettier --write .",
-		"lint": "eslint --fix . --ext .js,.jsx"
+		"lint": "eslint --fix . --ext .js,.jsx",
+		"pretty": "prettier --check '**/*.{js,jsx,ts,tsx}'"
 	},
 	"eslintConfig": {
 		"extends": [
@@ -52,6 +53,7 @@
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-config-standard": "^17.0.0",
 		"eslint-plugin-import": "^2.26.0",
+		"eslint-plugin-jest-dom": "^4.0.2",
 		"eslint-plugin-n": "^15.3.0",
 		"eslint-plugin-promise": "^6.1.0",
 		"eslint-plugin-react": "^7.31.10",
