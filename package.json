@@ -17,12 +17,12 @@
 		"web-vitals": "^2.1.4"
 	},
 	"scripts": {
-		"predeploy": "run build",
-		"deploy": "gh-pages -d build",
+	
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "jest",
 		"eject": "react-scripts eject",
+		"deploy": "gh-pages -d build",
 		"format": "prettier --write .",
 		"lint": "eslint --fix . --ext .js,.jsx",
 		"pretty": "prettier --check '**/*.{js,jsx,ts,tsx}'"
