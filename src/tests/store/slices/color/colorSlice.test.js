@@ -3,8 +3,7 @@ import {
 	appendToList,
 	changeColor,
 } from '../../../../store/slices/color/colorSlice';
-import { onColorChanged } from '../../../fixtures/colorFixtures';
-import { initialState } from '../../../fixtures/contentfulFistures';
+import { initialState, onColorChanged } from '../../../fixtures/colorFixtures';
 
 describe('Test the color slice', () => {
 	test('Must have an empty initial state', () => {
